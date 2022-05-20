@@ -8,7 +8,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 bot = commands.InteractionBot(
-    test_guilds=[int(os.getenv("DEVELOPER_GUILD_ID"))]
+    sync_commands=bool(os.getenv("SYNC_COMMANDS")),
+    # test_guilds=[int(os.getenv("DEVELOPER_GUILD_ID"))]
 )
 
 faqFile = open("faq.json")
