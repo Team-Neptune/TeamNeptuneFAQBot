@@ -1,0 +1,7 @@
+{
+  "How do I install pirated games?": "Read rule 3 in <#703302242123645010>",
+  "What software do I need to inject a payload?": "**Windows:** [TegraRcmGUI](https://github.com/eliboa/TegraRcmGUI/releases/latest)\n**macOS / Web (Chromium-based browsers):** [Nintendo Switch Payload Loader](https://webcfw.sdsetup.com/)\n\n[More options](https://wiki.gbatemp.net/wiki/List_of_Switch_payloads)",
+  "How do I install Android on the Switch?": "https://forum.xda-developers.com/t/rom-unofficial-8-1-switchroot-lineageos-15-1.3951389/",
+  "How much space do I need for an emuMMC": "An emuMMC takes about 30GB of storage, so a 64GB would be the minimum. For the best experience, you should use a 128GB or higher SD card.",
+  "What DNS do I use?": "90DNS blocks all connections to Nintendo, while AquaticDNS allows some connections to Nintendo (such as Online) without telemetry.\n\n**Please note:** AquaticDNS is not ran by Team Neptune, so we can't guarantee it'll work as advertised."
+}
