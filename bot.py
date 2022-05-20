@@ -28,7 +28,7 @@ async def autocomplete_faqs(inter, string: str) -> List[str]:
 
 @bot.slash_command(auto_sync=False, description="Learn how you can contribute to the responses of this bot")
 async def contribute(inter: disnake.CommandInteraction):
-    return await inter.response.send_message(content="You can contribute by going", ephemeral=True)
+    return await inter.response.send_message(content="You can contribute by going to https://github.com/Team-Neptune/TeamNeptuneFAQBot", ephemeral=True)
 
 
 # View FAQ in an ephemeral message (For normal users)
