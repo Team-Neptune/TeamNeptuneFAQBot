@@ -1,3 +1,4 @@
+import subprocess
 import os
 import disnake
 import json
@@ -60,5 +61,18 @@ async def post_faq(
         await inter.response.send_message(embed=disnake.Embed(title=question, description=faqAnswer))
     else:
         return await inter.response.send_message("Unable to find that FAQ", ephemeral=True)
+
+# Update JSON without bot reload
+
+
+@bot.slash_command(auto_sync=False, description="Pull latest from Git, update JSON (No reload)", default_member_permissions=8)
+async def update_faq(
+    inter: disnake.CommandInteraction,
+):
+    await inter.response.defer(ephemeral=True)
+    output = subprocess.check_output(["git", "pull"])
+    global FAQs
+    FAQs = json.load(open("faq.json"))
+    return await inter.edit_original_message(content=output)
 
 bot.run(os.getenv("TOKEN"))
