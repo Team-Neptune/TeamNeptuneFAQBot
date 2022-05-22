@@ -23,7 +23,7 @@ async def on_ready():
 
 
 async def autocomplete_faqs(inter, string: str) -> List[str]:
-    return [question for question in FAQs if string.lower() in question.lower()][:20]
+    return [question for question in FAQs if string.lower() in question.lower()][:10]
 
 # Link to Github to contribute
 
