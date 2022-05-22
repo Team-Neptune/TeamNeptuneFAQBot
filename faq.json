@@ -16,5 +16,7 @@
   "How do I get 90DNS?": "**90DNS**: Allows you to connect to internet without connecting to non-Nintendo services.\n\n**1st IP**: `207.246.121.77`\n**2nd IP**: `163.172.141.219`",
   "Do I always need to inject a payload to use CFW?": "Yes, you need *some* payload injector such as a computer, portable, or hard mod.",
   "What is the best guide to use to setup CFW on my switch?": "https://switch.homebrew.guide/",
-  "Where can I get sigpatches?": "The Switch AIO updater homebrew allows you to download them. As their general purpose is to allow piracy, Team Neptune will not be providing any help with installation or problems of said patches or pirated games afterwards."
+  "Where can I get sigpatches?": "The Switch AIO updater homebrew allows you to download them. As their general purpose is to allow piracy, Team Neptune will not be providing any help with installation or problems of said patches or pirated games afterwards.",
+  "When should I fix archive bits?": "It never hurts to try fixing archive bits when you're having trouble using CFW on your switch, but primarily it's best to use when using macOS to manage the files on your SD card.",
+  "How can I fix archive bits?": "If you're able to get into Hekate, go to:\n`Tools` -> `Arch bit * RCM * Touch * Pkg1/2` -> `Fix archive bit`"
 }
