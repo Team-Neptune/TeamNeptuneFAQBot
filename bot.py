@@ -28,14 +28,14 @@ async def autocomplete_faqs(inter, string: str) -> List[str]:
 # Link to Github to contribute
 
 
-@bot.slash_command(auto_sync=False, description="Learn how you can contribute to the responses of this bot")
+@bot.slash_command(auto_sync=bool(os.getenv("SYNC_COMMANDS")), description="Learn how you can contribute to the responses of this bot")
 async def contribute(inter: disnake.CommandInteraction):
     return await inter.response.send_message(content="You can contribute by going to https://github.com/Team-Neptune/TeamNeptuneFAQBot", ephemeral=True)
 
 
 # View FAQ in an ephemeral message (For normal users)
 
-@bot.slash_command(auto_sync=False, description="View answers to Frequently Asked Questions")
+@bot.slash_command(auto_sync=bool(os.getenv("SYNC_COMMANDS")), description="View answers to Frequently Asked Questions")
 async def faq(
     inter: disnake.CommandInteraction,
     question: str = commands.Param(
@@ -50,7 +50,7 @@ async def faq(
 
 # View FAQ in a public message (For mods users, Manage Messages required)
 
-@bot.slash_command(auto_sync=False, description="View answers to Frequently Asked Questions and post it in chat", default_member_permissions=8192)
+@bot.slash_command(auto_sync=bool(os.getenv("SYNC_COMMANDS")), description="View answers to Frequently Asked Questions and post it in chat", default_member_permissions=8192)
 async def post_faq(
     inter: disnake.CommandInteraction,
     question: str = commands.Param(
@@ -65,7 +65,7 @@ async def post_faq(
 # Update JSON without bot reload
 
 
-@bot.slash_command(auto_sync=False, description="Pull latest from Git, update JSON (No bot reload)", default_member_permissions=8)
+@bot.slash_command(auto_sync=bool(os.getenv("SYNC_COMMANDS")), description="Pull latest from Git, update JSON (No bot reload)", default_member_permissions=8)
 async def update_faq(
     inter: disnake.CommandInteraction,
 ):
