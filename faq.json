@@ -14,5 +14,7 @@
   "Can I use online services on my switch?": "**⚠️ Important:** Do **not** connect the emuMMC to Nintendo in any way. This will most likely cause a ban due to mismatching logs.\n\nGenerally, you can connect safely to online services if you **haven't** done any of the following:\n\n- Install pirated games at *some* point (even if you uninstalled them)\n- Modify saves in online games\n- Do actions on your account that normal users can't do (custom avatars)\n\n**This is a non-exaustive list as we don't know everything Nintendo bans for. Do at your own risk.**",
   "Can I use exFAT formatted SD card?": "Using an exFAT formatted SD card is not recommended as it can corrupt easier on the Nintendo Switch. Using FAT32 instead is the better option.",
   "How do I get 90DNS?": "**90DNS**: Allows you to connect to internet without connecting to non-Nintendo services.\n\n**1st IP**: `207.246.121.77`\n**2nd IP**: `163.172.141.219`",
-  "Do I always need to inject a payload to use CFW?": "Yes, you need *some* payload injector such as a computer, portable, or hard mod."
+  "Do I always need to inject a payload to use CFW?": "Yes, you need *some* payload injector such as a computer, portable, or hard mod.",
+  "What is the best guide to use to setup CFW on my switch?": "https://switch.homebrew.guide/",
+  "Where can I get sigpatches?": "The Switch AIO updater homebrew allows you to download them. As their general purpose is to allow piracy, Team Neptune will not be providing any help with installation or problems of said patches or pirated games afterwards."
 }
