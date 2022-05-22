@@ -39,13 +39,13 @@ async def contribute(inter: disnake.CommandInteraction):
 async def faq(
     inter: disnake.CommandInteraction,
     question: str = commands.Param(
-        autocomplete=autocomplete_faqs, description="The question to get an answer to")
+        autocomplete=autocomplete_faqs, description="Start typing your question to see if it exists")
 ):
     if question in FAQs.keys():
         faqAnswer = FAQs[question]
         await inter.response.send_message(embed=disnake.Embed(title=question, description=faqAnswer), ephemeral=True)
     else:
-        return await inter.response.send_message("Unable to find that FAQ", ephemeral=True)
+        return await inter.response.send_message("Unable to find that FAQ, ask your question in chat so it can be answered and added!", ephemeral=True)
 
 
 # View FAQ in a public message (For mods users, Manage Messages required)
@@ -54,18 +54,18 @@ async def faq(
 async def post_faq(
     inter: disnake.CommandInteraction,
     question: str = commands.Param(
-        autocomplete=autocomplete_faqs, description="The question to get an answer to")
+        autocomplete=autocomplete_faqs, description="Start typing the question to see if it exists")
 ):
     if question in FAQs.keys():
         faqAnswer = FAQs[question]
         await inter.response.send_message(embed=disnake.Embed(title=question, description=faqAnswer))
     else:
-        return await inter.response.send_message("Unable to find that FAQ", ephemeral=True)
+        return await inter.response.send_message("Unable to find that FAQ. Once it gets solved, add it!", ephemeral=True)
 
 # Update JSON without bot reload
 
 
-@bot.slash_command(auto_sync=False, description="Pull latest from Git, update JSON (No reload)", default_member_permissions=8)
+@bot.slash_command(auto_sync=False, description="Pull latest from Git, update JSON (No bot reload)", default_member_permissions=8)
 async def update_faq(
     inter: disnake.CommandInteraction,
 ):
