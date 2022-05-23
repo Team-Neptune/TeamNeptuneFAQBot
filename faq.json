@@ -18,5 +18,8 @@
   "What is the best guide to use to setup CFW on my switch?": "https://switch.homebrew.guide/",
   "Where can I get sigpatches?": "The Switch AIO updater homebrew allows you to download them. As their general purpose is to allow piracy, Team Neptune will not be providing any help with installation or problems of said patches or pirated games afterwards.",
   "When should I fix archive bits?": "It never hurts to try fixing archive bits when you're having trouble using CFW on your switch, but primarily it's best to use when using macOS to manage the files on your SD card.",
-  "How can I fix archive bits?": "If you're able to get into Hekate, go to:\n`Tools` -> `Arch bit * RCM * Touch * Pkg1/2` -> `Fix archive bit`"
+  "How can I fix archive bits?": "If you're able to get into Hekate, go to:\n`Tools` -> `Arch bit * RCM * Touch * Pkg1/2` -> `Fix archive bit`",
+  "What is DeepSea?": "DeepSea is basically a package of many things. We include Atmosphere CFW, Hekate Bootloader, and various homebrew software. While we do include software that can install software, Team Neptune does not encourage or provide support for installing pirated content.",
+  "Does DeepSea include sigpatches?": "DeepSea does not include sigpatches by default. We also do not provide support for installing of the patches or software requiring them. All we help with regarding sigpatches is included in the following FAQ: \"Where can I get sigpatches?\"",
+  "How do I format to FAT32?": "Windows: [guiformat](http://ridgecrop.co.uk/guiformat.exe)\nmacOS: **Follow below steps**\n\nIf your PC doesn't allow you to format your card to FAT32 you can do that in hekate:\n`Tools` -> `Arch bit · RCM · Touch · Partition` -> `Partition`"
 }
