@@ -21,5 +21,8 @@
   "How can I fix archive bits?": "If you're able to get into Hekate, go to:\n`Tools` -> `Arch bit * RCM * Touch * Pkg1/2` -> `Fix archive bit`",
   "Can my console get unbanned from Nintendo?": "No. Once you're banned, you're banned permanently. This is usually a console ban and not an account ban, so you can get a new console to use online services again.",
   "What is the correct layout for the SD card?": "Your SD card should have the following as bare *minimum*:\n```\n\nSD CARD\n├── atmosphere\n├── bootloader\n├── config\n├── Nintendo\n└── switch\n\n```",
-  "What are sigpatches?": "Sigpatches allow you to run unsigned software, such as backups, pirated games and homebrew NSPs. \n\n**Team Neptune will not provide support for installations of these patches**"
+  "What are sigpatches?": "Sigpatches allow you to run unsigned software, such as backups, pirated games and homebrew NSPs. \n\n**Team Neptune will not provide support for installations of these patches**",
+  "What is DeepSea?": "DeepSea is basically a package of many things. We include Atmosphere CFW, Hekate Bootloader, and various homebrew software. While we do include software that can install software, Team Neptune does not encourage or provide support for installing pirated content.",
+  "Does DeepSea include sigpatches?": "DeepSea does not include sigpatches by default. We also do not provide support for installing of the patches or software requiring them. All we help with regarding sigpatches is included in the following FAQ: \"Where can I get sigpatches?\"",
+  "How do I format to FAT32?": "Windows: [guiformat](http://ridgecrop.co.uk/guiformat.exe)\nmacOS: **Follow below steps**\n\nIf your PC doesn't allow you to format your card to FAT32 you can do that in hekate:\n`Tools` -> `Arch bit · RCM · Touch · Partition` -> `Partition`"
 }
