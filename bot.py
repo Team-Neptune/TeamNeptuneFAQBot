@@ -22,8 +22,19 @@ async def on_ready():
     print("{}#{} is ready".format(bot.user.name, bot.user.discriminator))
 
 
-async def autocomplete_faqs(inter, string: str) -> List[str]:
-    return [question for question in FAQs if string.lower() in question.lower()][:10]
+async def autocomplete_faqs(inter, searchTerm: str) -> List[str]:
+    if len(searchTerm.strip()) == 0:
+        return [question for question in FAQs][:10]
+    searchTermElements = searchTerm.split()
+    results = []
+    for s in searchTermElements:
+        for q in FAQs:
+            if searchTerm.lower() == q.lower():
+                return [q]
+            if s.lower() in q.lower():
+                if q not in results:
+                    results.append(q)
+    return results[:10]
 
 # Link to Github to contribute
 
