@@ -31,5 +31,8 @@
   "What are the ban risks?": "Read this for more information:\n<https://discord.com/channels/703301751171973190/703302552594284594/824322420529823764>",
   "How do I update the firmware?": "You can by updating normally or through AiO Updater.",
   "What is the meaning of life?": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Twemoji12_1f9c0.svg/512px-Twemoji12_1f9c0.svg.png",
-  "How do I setup exosphere?": "You can enable/disable exosphere by going to `/atmophere/config/exosphere.ini` on your SD card and editing the following:\n```\nblank_prodinfo_sysmmc=0\nblank_prodinfo_emummc=0\n```\n\n0 = Esosphere Disabled\n1 = Esosphere Enabled\n\nPlease note, using 90DNS (FAQ: *How do I get 90DNS?*) is still the best option to prevent connecting to Nintendo, as long as you have it setup on every internet connection (all wifi, ethernet, etc.) before connecting to them."
+  "How do I setup exosphere?": "You can enable/disable exosphere by going to `/atmophere/config/exosphere.ini` on your SD card and editing the following:\n```\nblank_prodinfo_sysmmc=0\nblank_prodinfo_emummc=0\n```\n\n0 = Esosphere Disabled\n1 = Esosphere Enabled\n\nPlease note, using 90DNS (FAQ: *How do I get 90DNS?*) is still the best option to prevent connecting to Nintendo, as long as you have it setup on every internet connection (all wifi, ethernet, etc.) before connecting to them.",
+  "What does Failed to init or mount SD mean?": "This usually means the SD card is unable to be read. Make sure it's in a compatible format such as exFAT or FAT32. (FAT32 is the recommended format)",
+  "What formats does the Nintendo Switch support?": "FAT32 or exFAT. However, FAT32 is the recommended format.",
+  "Does my account get banned if I get banned?": "Usually, it's a console ban, not an account ban. However, if you do something such as setting inappropriate profile pictures, or setting it to something the switch normally can't do, it might be an account ban."
 }
