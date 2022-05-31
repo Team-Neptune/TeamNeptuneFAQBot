@@ -1,6 +1,9 @@
+import random
 import subprocess
 import os
+from this import d
 import disnake
+from disnake import ButtonStyle
 import json
 from typing import List
 from disnake.ext import commands
@@ -36,6 +39,16 @@ async def autocomplete_faqs(inter, searchTerm: str) -> List[str]:
                     results.append(q)
     return results[:10]
 
+
+def generateRandomFAQs() -> List[str]:
+    randomNumber = random.randrange(len(FAQs.keys()))
+    if (len(FAQs.keys()) - randomNumber) <= 3:
+        randomNumber = randomNumber-3
+    otherFaqOne = list(FAQs.keys())[randomNumber]
+    otherFaqTwo = list(FAQs.keys())[randomNumber+1]
+    otherFaqThree = list(FAQs.keys())[randomNumber+2]
+    return [otherFaqOne, otherFaqTwo, otherFaqThree]
+
 # Link to Github to contribute
 
 
@@ -54,7 +67,80 @@ async def faq(
 ):
     if question in FAQs.keys():
         faqAnswer = FAQs[question]
-        await inter.response.send_message(embed=disnake.Embed(title=question, description=faqAnswer), ephemeral=True)
+        randomlyGenerated = generateRandomFAQs()
+        otherFaqOne = randomlyGenerated[0]
+        otherFaqTwo = randomlyGenerated[1]
+        otherFaqThree = randomlyGenerated[2]
+
+        class OtherFaqsDropdown(disnake.ui.Select):
+            def __init__(self):
+                options = [
+                    disnake.SelectOption(
+                        label=otherFaqOne, description=FAQs[otherFaqOne][0:100], value=str(
+                            otherFaqOne)
+                    ),
+                    disnake.SelectOption(
+                        label=otherFaqTwo, description=FAQs[otherFaqTwo][0:100], value=str(
+                            otherFaqTwo)
+                    ),
+                    disnake.SelectOption(
+                        label=otherFaqThree, description=FAQs[otherFaqThree][0:100], value=str(
+                            otherFaqThree)
+                    ),
+                ]
+                super().__init__(
+                    placeholder="Other FAQs you may need",
+                    min_values=1,
+                    max_values=1,
+                    options=options,
+                )
+
+            async def callback(self, interaction: disnake.MessageInteraction):
+                requestedQuestion = self.values[0]
+                randomlyGenerated = generateRandomFAQs()
+                otherFaqOne = randomlyGenerated[0]
+                otherFaqTwo = randomlyGenerated[1]
+                otherFaqThree = randomlyGenerated[2]
+
+                class OtherFaqsDropdownResponded(disnake.ui.Select):
+                    def __init__(self):
+                        options = [
+                            disnake.SelectOption(
+                                label=otherFaqOne, description=FAQs[otherFaqOne][0:100], value=str(
+                                    otherFaqOne)
+                            ),
+                            disnake.SelectOption(
+                                label=otherFaqTwo, description=FAQs[otherFaqTwo][0:100], value=str(
+                                    otherFaqTwo)
+                            ),
+                            disnake.SelectOption(
+                                label=otherFaqThree, description=FAQs[otherFaqThree][0:100], value=str(
+                                    otherFaqThree)
+                            ),
+                        ]
+                        super().__init__(
+                            placeholder="Other FAQs you may need",
+                            min_values=1,
+                            max_values=1,
+                            options=options,
+                        )
+
+                    async def callback(self, interaction: disnake.MessageInteraction):
+                        requestedQuestion = self.values[0]
+                        await interaction.response.edit_message(embed=disnake.Embed(title=requestedQuestion, description=FAQs[requestedQuestion]), view=OtherFAQsView())
+
+                class OtherFAQsViewResponded(disnake.ui.View):
+                    def __init__(self):
+                        super().__init__()
+                        self.add_item(OtherFaqsDropdownResponded())
+                await interaction.response.edit_message(embed=disnake.Embed(title=requestedQuestion, description=FAQs[requestedQuestion]), view=OtherFAQsViewResponded())
+
+        class OtherFAQsView(disnake.ui.View):
+            def __init__(self):
+                super().__init__()
+                self.add_item(OtherFaqsDropdown())
+
+        await inter.response.send_message(embed=disnake.Embed(title=question, description=faqAnswer), ephemeral=True, view=OtherFAQsView())
     else:
         return await inter.response.send_message("Unable to find that FAQ, ask your question in chat so it can be answered and added!", ephemeral=True)
 
