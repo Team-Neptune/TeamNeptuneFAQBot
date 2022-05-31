@@ -127,7 +127,7 @@ async def faq(
 
                     async def callback(self, interaction: disnake.MessageInteraction):
                         requestedQuestion = self.values[0]
-                        await interaction.response.edit_message(embed=disnake.Embed(title=requestedQuestion, description=FAQs[requestedQuestion]), view=OtherFAQsView())
+                        await interaction.response.edit_message(embed=disnake.Embed(title=requestedQuestion, description=FAQs[requestedQuestion]), view=OtherFaqsDropdownResponded())
 
                 class OtherFAQsViewResponded(disnake.ui.View):
                     def __init__(self):
