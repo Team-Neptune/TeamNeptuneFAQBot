@@ -25,7 +25,7 @@ async def on_ready():
     print("{}#{} is ready".format(bot.user.name, bot.user.discriminator))
 
 
-async def autocomplete_faqs(inter, searchTerm: str) -> List[str]:
+def searchFAQs(searchTerm: str) -> List[str]:
     if len(searchTerm.strip()) == 0:
         return [question for question in FAQs][:10]
     searchTermElements = searchTerm.split()
@@ -37,16 +37,21 @@ async def autocomplete_faqs(inter, searchTerm: str) -> List[str]:
             if s.lower() in q.lower():
                 if q not in results:
                     results.append(q)
-    return results[:10]
+    return results
 
 
-def generateRandomFAQs() -> List[str]:
-    randomNumber = random.randrange(len(FAQs.keys()))
-    if (len(FAQs.keys()) - randomNumber) <= 3:
+async def autocomplete_faqs(inter, searchTerm: str) -> List[str]:
+    return searchFAQs(searchTerm=searchTerm)[:10]
+
+
+def generateRandomFAQs(overrideList: list = None) -> List[str]:
+    basedOnList = overrideList or FAQs.keys()
+    randomNumber = random.randrange(len(basedOnList))
+    if (len(basedOnList) - randomNumber) <= 3:
         randomNumber = randomNumber-3
-    otherFaqOne = list(FAQs.keys())[randomNumber]
-    otherFaqTwo = list(FAQs.keys())[randomNumber+1]
-    otherFaqThree = list(FAQs.keys())[randomNumber+2]
+    otherFaqOne = list(basedOnList)[randomNumber]
+    otherFaqTwo = list(basedOnList)[randomNumber+1]
+    otherFaqThree = list(basedOnList)[randomNumber+2]
     return [otherFaqOne, otherFaqTwo, otherFaqThree]
 
 # Link to Github to contribute
@@ -79,6 +84,7 @@ async def faq(
                         label=otherFaqOne, description=FAQs[otherFaqOne][0:100], value=str(
                             otherFaqOne)
                     ),
+
                     disnake.SelectOption(
                         label=otherFaqTwo, description=FAQs[otherFaqTwo][0:100], value=str(
                             otherFaqTwo)
@@ -97,43 +103,7 @@ async def faq(
 
             async def callback(self, interaction: disnake.MessageInteraction):
                 requestedQuestion = self.values[0]
-                randomlyGenerated = generateRandomFAQs()
-                otherFaqOne = randomlyGenerated[0]
-                otherFaqTwo = randomlyGenerated[1]
-                otherFaqThree = randomlyGenerated[2]
-
-                class OtherFaqsDropdownResponded(disnake.ui.Select):
-                    def __init__(self):
-                        options = [
-                            disnake.SelectOption(
-                                label=otherFaqOne, description=FAQs[otherFaqOne][0:100], value=str(
-                                    otherFaqOne)
-                            ),
-                            disnake.SelectOption(
-                                label=otherFaqTwo, description=FAQs[otherFaqTwo][0:100], value=str(
-                                    otherFaqTwo)
-                            ),
-                            disnake.SelectOption(
-                                label=otherFaqThree, description=FAQs[otherFaqThree][0:100], value=str(
-                                    otherFaqThree)
-                            ),
-                        ]
-                        super().__init__(
-                            placeholder="Other FAQs you may need",
-                            min_values=1,
-                            max_values=1,
-                            options=options,
-                        )
-
-                    async def callback(self, interaction: disnake.MessageInteraction):
-                        requestedQuestion = self.values[0]
-                        await interaction.response.edit_message(embed=disnake.Embed(title=requestedQuestion, description=FAQs[requestedQuestion]), view=OtherFaqsDropdownResponded())
-
-                class OtherFAQsViewResponded(disnake.ui.View):
-                    def __init__(self):
-                        super().__init__()
-                        self.add_item(OtherFaqsDropdownResponded())
-                await interaction.response.edit_message(embed=disnake.Embed(title=requestedQuestion, description=FAQs[requestedQuestion]), view=OtherFAQsViewResponded())
+                await interaction.response.edit_message(embed=disnake.Embed(title=requestedQuestion, description=FAQs[requestedQuestion]), view=OtherFAQsView())
 
         class OtherFAQsView(disnake.ui.View):
             def __init__(self):
