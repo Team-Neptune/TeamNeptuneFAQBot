@@ -25,33 +25,47 @@ async def on_ready():
     print("{}#{} is ready".format(bot.user.name, bot.user.discriminator))
 
 
-def searchFAQs(searchTerm: str) -> List[str]:
+def searchFAQs(searchTerm: str, ignoreExactMatches: bool = False) -> List[str]:
     if len(searchTerm.strip()) == 0:
         return [question for question in FAQs][:10]
     searchTermElements = searchTerm.split()
-    results = []
-    for s in searchTermElements:
+    # TEST:0
+    results = {}
+
+    def get_question_points(question):
+        return results[question]
+    for ste in searchTermElements:
         for q in FAQs:
-            if searchTerm.lower() == q.lower():
+            if searchTerm.lower() == q.lower() and not ignoreExactMatches:
                 return [q]
-            if s.lower() in q.lower():
-                if q not in results:
-                    results.append(q)
-    return results
+            if ste.lower() in q.lower():
+                if q in results:
+                    results[q] = results[q] + 1
+                else:
+                    results[q] = 1
+    resultQuestions = [question for question in results]
+    resultQuestions.sort(key=get_question_points, reverse=True)
+    return resultQuestions
 
 
 async def autocomplete_faqs(inter, searchTerm: str) -> List[str]:
     return searchFAQs(searchTerm=searchTerm)[:10]
 
 
-def generateRandomFAQs(overrideList: list = None) -> List[str]:
+def generateRandomFAQs(overrideList: list = None, baseOnTerm: str = None) -> List[str]:
     basedOnList = overrideList or FAQs.keys()
-    randomNumber = random.randrange(len(basedOnList))
-    if (len(basedOnList) - randomNumber) <= 3:
-        randomNumber = randomNumber-3
-    otherFaqOne = list(basedOnList)[randomNumber]
-    otherFaqTwo = list(basedOnList)[randomNumber+1]
-    otherFaqThree = list(basedOnList)[randomNumber+2]
+    if baseOnTerm:
+        results = searchFAQs(baseOnTerm, ignoreExactMatches=True)
+        otherFaqOne = results[1]
+        otherFaqTwo = results[2] or None
+        otherFaqThree = results[3] or None
+    else:
+        randomNumber = random.randrange(len(basedOnList))
+        if (len(basedOnList) - randomNumber) <= 5:
+            randomNumber = randomNumber-5
+        otherFaqOne = list(basedOnList)[randomNumber]
+        otherFaqTwo = list(basedOnList)[randomNumber+1] or None
+        otherFaqThree = list(basedOnList)[randomNumber+2] or None
     return [otherFaqOne, otherFaqTwo, otherFaqThree]
 
 # Link to Github to contribute
