@@ -22,7 +22,7 @@ FAQs = json.load(faqFile)
 
 @bot.event
 async def on_ready():
-    print("{}#{} is ready".format(bot.user.name, bot.user.discriminator))
+    print(f"{bot.user.name}#{bot.user.discriminator} is ready\nGuild count: {len(bot.guilds)}")
 
 
 def searchFAQs(searchTerm: str, ignoreExactMatches: bool = False) -> List[str]:
