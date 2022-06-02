@@ -128,7 +128,7 @@ async def post_faq(
 ):
     if question in FAQs.keys():
         faqAnswer = FAQs[question]
-        await inter.response.send_message(embed=disnake.Embed(title=question, description=faqAnswer))
+        await inter.response.send_message(embed=disnake.Embed(title=question, description=faqAnswer).set_footer(text="ℹ️ Search for answers yourself by using the /faq command!"))
     else:
         return await inter.response.send_message("Unable to find that FAQ. Once it gets solved, add it!", ephemeral=True)
 
