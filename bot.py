@@ -86,30 +86,19 @@ async def faq(
 ):
     if question in FAQs.keys():
         faqAnswer = FAQs[question]
-        randomlyGenerated = generateRandomFAQs()
-        otherFaqOne = randomlyGenerated[0]
-        otherFaqTwo = randomlyGenerated[1]
-        otherFaqThree = randomlyGenerated[2]
+        randomlyGenerated = generateRandomFAQs(baseOnTerm=question)
 
         class OtherFaqsDropdown(disnake.ui.Select):
             def __init__(self):
-                options = [
-                    disnake.SelectOption(
-                        label=otherFaqOne, description=FAQs[otherFaqOne][0:100], value=str(
-                            otherFaqOne)
-                    ),
-
-                    disnake.SelectOption(
-                        label=otherFaqTwo, description=FAQs[otherFaqTwo][0:100], value=str(
-                            otherFaqTwo)
-                    ),
-                    disnake.SelectOption(
-                        label=otherFaqThree, description=FAQs[otherFaqThree][0:100], value=str(
-                            otherFaqThree)
-                    ),
-                ]
+                options = []
+                for otherFaq in randomlyGenerated:
+                    if otherFaq is not None:
+                        options.append(disnake.SelectOption(
+                            label=otherFaq, description=FAQs[otherFaq][0:100], value=str(
+                                otherFaq)
+                        ))
                 super().__init__(
-                    placeholder="Other FAQs you may need",
+                    placeholder="Related FAQs",
                     min_values=1,
                     max_values=1,
                     options=options,
