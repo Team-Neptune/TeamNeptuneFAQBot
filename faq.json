@@ -35,5 +35,7 @@
   "What does Failed to init or mount SD mean?": "This usually means the SD card is unable to be read. Make sure it's in a compatible format such as exFAT or FAT32. (FAT32 is the recommended format)",
   "What formats does the Nintendo Switch support?": "FAT32 or exFAT. However, FAT32 is the recommended format.",
   "Does my account get banned if I get banned?": "Usually, it's a console ban, not an account ban. However, if you do something such as setting inappropriate profile pictures, or setting it to something the switch normally can't do, it might be an account ban.",
-  "Why does my screen stay black after the Nintendo logo?": "This is usually because you have too many sysmodules on at once. Disable all of them by booting into `Hekate` and selecting `Payloads`, Selecting `CommonProblemResolver.bin` and then selecting `Disabling automatic sysmodule startup`."
+  "Why does my screen stay black after the Nintendo logo?": "This is usually because you have too many sysmodules on at once. Disable all of them by booting into `Hekate` and selecting `Payloads`, Selecting `CommonProblemResolver.bin` and then selecting `Disabling automatic sysmodule startup`.",
+  "Will my games from Stock appear in emuMMC?": "Yes, at the initial creation of the emummc. Once created, Stock and emummc will be independent of each other.",
+  "Why does adding mods crash my game?": "Some mods are incompatible with newer versions of a game. Additionally, a mod could be too large of a size."
 }
