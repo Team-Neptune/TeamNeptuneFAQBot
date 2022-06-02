@@ -3,7 +3,6 @@ import subprocess
 import os
 from this import d
 import disnake
-from disnake import ButtonStyle
 import json
 from typing import List
 from disnake.ext import commands
@@ -90,7 +89,12 @@ async def faq(
 
         class OtherFaqsDropdown(disnake.ui.Select):
             def __init__(self):
-                options = []
+                options = [
+                    disnake.SelectOption(
+                        label=question, description=FAQs[question][0:100], value=str(
+                            question), emoji="⭐"
+                    )
+                ]
                 for otherFaq in randomlyGenerated:
                     if otherFaq is not None:
                         options.append(disnake.SelectOption(
