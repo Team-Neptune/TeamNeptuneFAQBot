@@ -13,7 +13,7 @@
   "Should I use Hekate or Fusee?": "While both should work fine, Hekate offers more features and is recommended by Team Neptune.",
   "Can I use online services on my switch?": "**⚠️ Important:** Do **not** connect the emuMMC to Nintendo in any way. This will most likely cause a ban due to mismatching logs.\n\nGenerally, you can connect safely to online services if you **haven't** done any of the following:\n\n- Install pirated games at *some* point (even if you uninstalled them)\n- Modify saves in online games\n- Do actions on your account that normal users can't do (custom avatars)\n\n**This is a non-exaustive list as we don't know everything Nintendo bans for. Do at your own risk.**",
   "Can I use exFAT formatted SD card?": "Using an exFAT formatted SD card is not recommended as it can corrupt easier on the Nintendo Switch. Using FAT32 instead is the better option.",
-  "How do I get 90DNS?": "**90DNS**: Allows you to connect to internet without connecting to non-Nintendo services.\n\n**1st IP**: `207.246.121.77`\n**2nd IP**: `163.172.141.219`",
+  "How do I get 90DNS?": "**⚠️ Important:** Do **not** connect the emuMMC to Nintendo in any way. This will most likely cause a ban due to mismatching logs.\n\n**90DNS**:\n\nA DNS service that allows you to safely connect to internet without connecting to Nintendo's services. Set the following DNS addresses in the connection setting(s) of your emuMMC:\n\n**1st IP**: `207.246.121.77`\n**2nd IP**: `163.172.141.219`",
   "Do I always need to inject a payload to use CFW?": "Yes, you need *some* payload injector such as a computer, portable, or hard mod.",
   "What is the best guide to use to setup CFW on my switch?": "https://switch.homebrew.guide/",
   "Where can I get sigpatches?": "The Switch AIO updater homebrew allows you to download them. As their general purpose is to allow piracy, Team Neptune will not be providing any help with installation or problems of said patches or pirated games afterwards.",
@@ -37,5 +37,6 @@
   "Does my account get banned if I get banned?": "Usually, it's a console ban, not an account ban. However, if you do something such as setting inappropriate profile pictures, or setting it to something the switch normally can't do, it might be an account ban.",
   "Why does my screen stay black after the Nintendo logo?": "This is usually because you have too many sysmodules on at once. Disable all of them by booting into `Hekate` and selecting `Payloads`, Selecting `CommonProblemResolver.bin` and then selecting `Disabling automatic sysmodule startup`.",
   "Will my games from Stock appear in emuMMC?": "Yes, at the initial creation of the emummc. Once created, Stock and emummc will be independent of each other.",
-  "Why does adding mods crash my game?": "Some mods are incompatible with newer versions of a game. Additionally, a mod could be too large of a size."
+  "Why does adding mods crash my game?": "Some mods are incompatible with newer versions of a game. Additionally, a mod could be too large of a size.",
+  "Why do I need to have games installed?": "Some homebrew require more RAM than the Album applet can provide. When you hold R while launching a game, you're giving the homebrew menu+apps extra RAM to be able to do more intensive tasks."
 }
