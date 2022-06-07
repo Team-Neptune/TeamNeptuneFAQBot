@@ -38,5 +38,6 @@
   "Why does my screen stay black after the Nintendo logo?": "This is usually because you have too many sysmodules on at once. Disable all of them by booting into `Hekate` and selecting `Payloads`, Selecting `CommonProblemResolver.bin` and then selecting `Disabling automatic sysmodule startup`.",
   "Will my games from Stock appear in emuMMC?": "Yes, at the initial creation of the emummc. Once created, Stock and emummc will be independent of each other.",
   "Why does adding mods crash my game?": "Some mods are incompatible with newer versions of a game. Additionally, a mod could be too large of a size.",
-  "Why do I need to have games installed?": "Some homebrew require more RAM than the Album applet can provide. When you hold R while launching a game, you're giving the homebrew menu+apps extra RAM to be able to do more intensive tasks."
+  "Why do I need to have games installed?": "Some homebrew require more RAM than the Album applet can provide. When you hold R while launching a game, you're giving the homebrew menu+apps extra RAM to be able to do more intensive tasks.",
+  "How do I access hekate from CFW?": "Restarting your switch from within CFW will boot you back to Hekate."
 }
