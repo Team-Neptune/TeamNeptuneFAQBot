@@ -39,5 +39,6 @@
   "Will my games from Stock appear in emuMMC?": "Yes, at the initial creation of the emummc. Once created, Stock and emummc will be independent of each other.",
   "Why does adding mods crash my game?": "Some mods are incompatible with newer versions of a game. Additionally, a mod could be too large of a size.",
   "Why do I need to have games installed?": "Some homebrew require more RAM than the Album applet can provide. When you hold R while launching a game, you're giving the homebrew menu+apps extra RAM to be able to do more intensive tasks.",
-  "How do I access hekate from CFW?": "Restarting your switch from within CFW will boot you back to Hekate."
+  "How do I access hekate from CFW?": "Restarting your switch from within CFW will boot you back to Hekate.",
+  "What does it mean if hekate says: there will be dragons?": "This means you're loading an older version of the hekate payload, but with newer SD card files. Make sure you update your payload injector's saved payload."
 }
