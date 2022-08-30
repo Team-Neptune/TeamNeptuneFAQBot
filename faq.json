@@ -42,5 +42,6 @@
   "How do I access hekate from CFW?": "Restarting your switch from within CFW will boot you back to Hekate.",
   "What does it mean if hekate says: there will be dragons?": "This means you're loading an older version of the hekate payload, but with newer SD card files. Make sure you update your payload injector's saved payload.",
   "Why doesn't Team Neptune support Tinfoil?": "The creator of the Tinfoil software is allegedly not a good person and the software is closed source, typically homebrew is open source so you know what you're actually running.",
-  "Why are YouTube guides / tutorials discouraged?": "Many YouTube guide videos are either misleading, outdated, or straight up incorrect. Using a written guide that you know is update to date is safer. If you *must* use a video, try to do research before blindly following the directions of the video."
+  "Why are YouTube guides / tutorials discouraged?": "Many YouTube guide videos are either misleading, outdated, or straight up incorrect. Using a written guide that you know is update to date is safer. If you *must* use a video, try to do research before blindly following the directions of the video.",
+  "How do you install Atmosphere on my switch?": "Atmosphere isn't installed on your switch, it lives on the SD card. This is why you need to keep your SD card in your console at all times."
 }
