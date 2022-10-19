@@ -16,7 +16,7 @@
   "How do I get 90DNS?": "**⚠️ Important:** Do **not** connect the emuMMC to Nintendo in any way. This will most likely cause a ban due to mismatching logs.\n\n**90DNS**:\n\nA DNS service that allows you to safely connect to internet without connecting to Nintendo's services. Set the following DNS addresses in the connection setting(s) of your emuMMC:\n\n**1st IP**: `207.246.121.77`\n**2nd IP**: `163.172.141.219`",
   "Do I always need to inject a payload to use CFW?": "Yes, you need *some* payload injector such as a computer, portable, or hard mod.",
   "What is the best guide to use to setup CFW on my switch?": "https://switch.homebrew.guide/",
-  "Where can I get sigpatches?": "The Switch AIO updater homebrew allows you to download them. As their general purpose is to allow piracy, Team Neptune will not be providing any help with installation or problems of said patches or pirated games afterwards.",
+  "Where can I get sigpatches?": "Sigpatches are not supported in this server as they are used to promote piracy; however, more information regarding sigpatches can be found online. We will not provide assistance with locating these patches.",
   "When should I fix archive bits?": "It never hurts to try fixing archive bits when you're having trouble using CFW on your switch, but primarily it's best to use when using macOS to manage the files on your SD card.",
   "How can I fix archive bits?": "If you're able to get into Hekate, go to:\n`Tools` -> `Arch bit * RCM * Touch * Pkg1/2` -> `Fix archive bit`",
   "Can my console get unbanned from Nintendo?": "No. Once you're banned, you're banned permanently. This is usually a console ban and not an account ban, so you can get a new console to use online services again.",
